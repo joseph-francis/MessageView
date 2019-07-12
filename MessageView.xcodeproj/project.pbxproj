@@ -15,6 +15,9 @@
 		7C9FD47622D90379003F313E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C9FD47422D90379003F313E /* Main.storyboard */; };
 		7C9FD47822D9037B003F313E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C9FD47722D9037B003F313E /* Assets.xcassets */; };
 		7C9FD47B22D9037B003F313E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C9FD47922D9037B003F313E /* LaunchScreen.storyboard */; };
+		7C9FD48322D90770003F313E /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9FD48222D90770003F313E /* MessageView.swift */; };
+		7C9FD48622D907B3003F313E /* TriangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9FD48522D907B3003F313E /* TriangleView.swift */; };
+		7C9FD48A22D907F6003F313E /* DirectionEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9FD48922D907F6003F313E /* DirectionEnum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +44,9 @@
 		7C9FD47722D9037B003F313E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7C9FD47A22D9037B003F313E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7C9FD47C22D9037B003F313E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7C9FD48222D90770003F313E /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		7C9FD48522D907B3003F313E /* TriangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleView.swift; sourceTree = "<group>"; };
+		7C9FD48922D907F6003F313E /* DirectionEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionEnum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +98,8 @@
 		7C6669E922D902CE00057112 /* MessageView */ = {
 			isa = PBXGroup;
 			children = (
+				7C9FD48722D907D8003F313E /* Models */,
+				7C9FD48022D90757003F313E /* Views */,
 				7C6669EA22D902CE00057112 /* MessageView.h */,
 				7C6669EB22D902CE00057112 /* Info.plist */,
 			);
@@ -118,6 +126,47 @@
 				7C9FD47C22D9037B003F313E /* Info.plist */,
 			);
 			path = MessageViewDemo;
+			sourceTree = "<group>";
+		};
+		7C9FD48022D90757003F313E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7C9FD48422D907A6003F313E /* TriangleView */,
+				7C9FD48122D9075D003F313E /* MessageView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7C9FD48122D9075D003F313E /* MessageView */ = {
+			isa = PBXGroup;
+			children = (
+				7C9FD48222D90770003F313E /* MessageView.swift */,
+			);
+			path = MessageView;
+			sourceTree = "<group>";
+		};
+		7C9FD48422D907A6003F313E /* TriangleView */ = {
+			isa = PBXGroup;
+			children = (
+				7C9FD48522D907B3003F313E /* TriangleView.swift */,
+			);
+			path = TriangleView;
+			sourceTree = "<group>";
+		};
+		7C9FD48722D907D8003F313E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7C9FD48822D907E7003F313E /* Enums */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7C9FD48822D907E7003F313E /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				7C9FD48922D907F6003F313E /* DirectionEnum.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +248,7 @@
 				TargetAttributes = {
 					7C6669E622D902CE00057112 = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
 					};
 					7C6669EF22D902CF00057112 = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -260,6 +310,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C9FD48622D907B3003F313E /* TriangleView.swift in Sources */,
+				7C9FD48322D90770003F313E /* MessageView.swift in Sources */,
+				7C9FD48A22D907F6003F313E /* DirectionEnum.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,6 +488,7 @@
 		7C6669FC22D902CF00057112 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -452,6 +506,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.joseph.MessageView;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -460,6 +515,7 @@
 		7C6669FD22D902CF00057112 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -485,6 +541,7 @@
 		7C6669FF22D902CF00057112 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M25WLDE3HH;
 				INFOPLIST_FILE = MessageViewTests/Info.plist;
@@ -503,6 +560,7 @@
 		7C666A0022D902CF00057112 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M25WLDE3HH;
 				INFOPLIST_FILE = MessageViewTests/Info.plist;
