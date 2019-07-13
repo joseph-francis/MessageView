@@ -1,14 +1,10 @@
 language: objective-c
 
-osx_image: xcode10.2
+osx_image: xcode10.1
 env:
   matrix:
     - TEST_SDK=iphonesimulator12.1 OS=12.1 NAME='iPhone XR'
     - TEST_SDK=iphonesimulator12.1 OS=12.1 NAME='iPhone 7'
 
 script:
-  - xcodebuild -scheme MessageView -sdk iphonesimulator -destination "platform=iOS Simulator,OS=$OS,name=$NAME" build test
-
-after_success:
-  - slather
-  - bash <(curl -s https://codecov.io/bash) -t "fba787ca-dce8-4af9-b4b4-0691f8582c9e" -f reports/cobertura.xml -X coveragepy -X gcov -X xcode
+  - set -o pipefail && xcodebuild test -enableCodeCoverage YES -project MessageView.xcodeproj -scheme MessageView -sdk $TEST_SDK -destination "platform=iOS Simulator,OS=$OS,name=$NAME" ONLY_ACTIVE_ARCH=YES
