@@ -1,10 +1,15 @@
 language: objective-c
+xcode_project: MessageView.xcodeproj 
+xcode_scheme: MessageViewTests
+xcode_destination: platform=iOS Simulator,OS=12.1,name=iPhone XR
 
-osx_image: xcode10.1
-env:
-  matrix:
-    - TEST_SDK=iphonesimulator12.1 OS=12.1 NAME='iPhone XR'
-    - TEST_SDK=iphonesimulator12.1 OS=12.1 NAME='iPhone 7'
+# language: objective-c
 
-script:
-  - set -o pipefail && xcodebuild test -enableCodeCoverage YES -project MessageView.xcodeproj -scheme MessageViewTests -sdk $TEST_SDK -destination "platform=iOS Simulator,OS=$OS,name=$NAME" ONLY_ACTIVE_ARCH=YES
+# osx_image: xcode10.1
+# env:
+#   matrix:
+#     - TEST_SDK=iphonesimulator12.1 OS=12.1 NAME='iPhone XR'
+#     - TEST_SDK=iphonesimulator12.1 OS=12.1 NAME='iPhone 7'
+
+# script:
+#   - set -o pipefail && xcodebuild test -enableCodeCoverage YES -project MessageView.xcodeproj -scheme MessageViewTests -sdk $TEST_SDK -destination "platform=iOS Simulator,OS=$OS,name=$NAME" ONLY_ACTIVE_ARCH=YES
