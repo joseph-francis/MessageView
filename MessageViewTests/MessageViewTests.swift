@@ -25,7 +25,15 @@ class MessageViewTests: XCTestCase {
         messageView = nil
     }
     
-    //Make test cases here 
+    func testUpdateFrame() {
+        
+        messageView.content = "Something this much"
+        let size = messageView.titleLbl.sizeThatFits(CGSize(width: 268, height: CGFloat.greatestFiniteMagnitude))
+        XCTAssertEqual(size.width, messageView.titleLbl.frame.size.width)
+        
+    }
+    
+    //Make test cases here
 
     func testPerformanceExample() {
         // This is an example of a performance test case.
